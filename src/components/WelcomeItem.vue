@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="item">
     <i>
       <slot name="icon"></slot>
@@ -12,12 +12,7 @@
   </div>
 </template>
 
-<style scoped>
-.item {
-  margin-top: 2rem;
-  display: flex;
-  position: relative;
-}
+
 
 .details {
   flex: 1;
@@ -30,7 +25,6 @@ i {
   place-content: center;
   width: 32px;
   height: 32px;
-
   color: var(--color-text);
 }
 
@@ -84,4 +78,5 @@ h3 {
     display: none;
   }
 }
-</style>
+</style> -->
+
