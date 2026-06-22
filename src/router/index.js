@@ -8,6 +8,7 @@ const router = createRouter({
   routes: [
     
 
+    
     {
       
       path: "/",
@@ -18,14 +19,21 @@ const router = createRouter({
  {
       path: '/schedule',
       name: 'schedule',
-      component: () => import('../views/Schedule.vue'),  // ← បន្ថែមនេះ
+      component: () => import('../views/Schedule.vue'), 
     },
 
-{
-      path: '/styles',
-      name: 'styles',
-      component: () => import('../views/Styles.vue'),  // ← Styles.vue មិនមែន Beerstyles.vue
+    {
+      path: "/awards",
+      name: 'award',
+      
+      component: () => import('../views/AwardView.vue')
     },
+
+    {
+      path: "/breweries",
+      name: 'breweries',
+      component: () => import('../views/BreweryView.vue')
+    }
 
 
     
