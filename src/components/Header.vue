@@ -49,9 +49,13 @@ const toggleMenu = () => {
 
         <div class="flex items-center gap-4">
           <div class="hidden md:block">
-            <RouterLink to="/judge" class="inline-flex items-center bg-[#EE9F27] hover:bg-[#b57305] text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-md text-base tracking-wide gap-2">           
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScEjueBWitDWygOZkaHDnkADWIHhYdgZ-lH_u3EvKM2RzL1AA/viewform" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center bg-[#EE9F27] hover:bg-[#b57305] text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-md text-base tracking-wide gap-2">           
               <i class="fa-solid fa-check-to-slot"></i> Judge here
-            </RouterLink>
+            </a>
           </div>
 
           <button @click="toggleMenu" class="block md:hidden p-2 text-gray-700 hover:text-amber-500 transition-colors focus:outline-none" aria-label="Toggle navigation menu">
