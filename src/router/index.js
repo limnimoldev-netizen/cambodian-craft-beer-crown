@@ -30,6 +30,12 @@ const router = createRouter({
     },
 
     {
+      path: "/styles",
+      name: 'styles',
+      component: () => import('../views/Styles.vue')
+    },
+
+    {
       path: "/breweries",
       name: 'breweries',
       component: () => import('../views/BreweryView.vue')
@@ -38,6 +44,12 @@ const router = createRouter({
       path: "/sponsors",
       name: 'sponsors',
       component: () => import('../views/Sponsor.View.vue')
+    },
+
+    {
+      path: "/voting",
+      name: 'voting',
+      component: () => import('../views/VotingView.vue')
     }
 
     
