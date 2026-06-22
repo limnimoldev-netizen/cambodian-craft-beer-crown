@@ -1,14 +1,14 @@
 <template>
-  <section class=" px-4 py-16 md:py-20 min-h-screen bg-[#FAF9F5]">
+  <section class=" px-4 md:py-20 min-h-screen bg-[#FAF9F5]">
   <div class="mx-auto max-w-5xl ">
   <div class="mx-auto max-w-5xl bg-[#FAF9F5] flex flex-col">
     
     <!-- Main Content -->
-    <main class="flex-1 max-w-2xl mx-auto w-full px-6 py-12">
+    <main class="flex-1 max-w-2xl mx-auto w-full px-6 ">
       
       <!-- Header -->
       <p class="text-amber-500 font-medium mb-2">Event Day</p>
-      <h1 class="text-3xl font-black text-gray-900 mb-3">Schedule</h1>
+      <h1 class="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">Schedule</h1>
       <div class="w-24 h-1 bg-amber-500 mb-6"></div>
       
       <!-- Description -->
