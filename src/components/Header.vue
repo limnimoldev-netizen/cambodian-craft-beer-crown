@@ -23,7 +23,7 @@ const toggleMenu = () => {
 
         <nav class="hidden md:flex items-center gap-8 font-medium text-base">
           <RouterLink to="/" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
-            <i class="fa-regular fa-house"></i> Home
+            <i class="fa-solid fa-house"></i> Home
           </RouterLink>
 
           <RouterLink to="/breweries" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
@@ -31,7 +31,7 @@ const toggleMenu = () => {
           </RouterLink>
 
           <RouterLink to="/schedule" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
-            <Calendar class="w-4 h-4" /> Schedule
+            <Calendar class=" fa-solid w-4 h-4" /> Schedule
           </RouterLink>
 
           <RouterLink to="/styles" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
@@ -43,8 +43,8 @@ const toggleMenu = () => {
           </RouterLink>
 
           <RouterLink to="/sponsors" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
-            <i class="fa-solid fa-handshake"></i> Sponsors
-          </RouterLink>
+            <i class="fa-solid  fa-handshake"></i> Sponsors
+          </RouterLink>                                                 
         </nav>
 
         <div class="flex items-center gap-4">
@@ -70,7 +70,7 @@ const toggleMenu = () => {
     <div v-if="isMenuOpen" class="md:hidden border-t border-gray-100 bg-white shadow-xl transition-all duration-300 ease-in-out">
       <div class="px-6 py-6 flex flex-col gap-5 font-medium text-lg">
         <RouterLink @click="isMenuOpen = false" to="/" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
-          <i class="fa-regular fa-house w-5 text-center"></i> Home
+          <i class="fa-solid fa-house w-5 text-center"></i> Home
         </RouterLink>
 
         <RouterLink @click="isMenuOpen = false" to="/breweries" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
