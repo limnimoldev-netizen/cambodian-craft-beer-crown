@@ -12,7 +12,7 @@
         <p class="mx-auto mt-2 max-w-2xl text-sm text-gray-500 leading-relaxed">
           We thank our generous sponsors who make the Cambodian Craft Beer Crown 2025 possible. And we are proud to partner with these incredible organizations who share our passion for craft beer excellence.
         </p>
-        <div class="w-40 h-[3px] bg-[#EE9F27] mx-auto mt-4"></div>
+        <div class="w-40 h-[2px] bg-[#EE9F27] mx-auto mt-4"></div>
       </div>
 
       <!-- Platinum Sponsors -->

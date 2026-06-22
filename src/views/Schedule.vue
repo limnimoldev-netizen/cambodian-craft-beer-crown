@@ -9,7 +9,7 @@
       <!-- Header -->
       <p class="text-amber-500 font-medium mb-2">Event Day</p>
       <h1 class="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">Schedule</h1>
-      <div class="w-24 h-1 bg-amber-500 mb-6"></div>
+      <div class="w-40 h-[2px] bg-[#EE9F27]  mt-4"></div>
       
       <!-- Description -->
       <p class="text-gray-600 mb-15 mt-10">
