@@ -33,6 +33,12 @@ const router = createRouter({
       path: "/breweries",
       name: 'breweries',
       component: () => import('../views/BreweryView.vue')
+    },
+
+    {
+      path: "/styles",
+      name: 'styles',
+      component: () => import('../views/Styles.vue')
     }
 
 
