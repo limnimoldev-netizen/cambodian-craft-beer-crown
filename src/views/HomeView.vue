@@ -81,7 +81,7 @@
           <span class="inline-flex items-center gap-2 text-amber-600 font-extrabold uppercase tracking-[3px] text-base animate-fade-in-up">
             Judging Process
           </span>
-          <h2 class="mt-3 text-3xl font-bold text-gray-900 animate-fade-in-up" style="animation-delay: 0.1s;">How Judging Works</h2>
+          <h2 class=" text-3xl font-bold text-gray-900 animate-fade-in-up" style="animation-delay: 0.1s;">How Judging Works</h2>
           <p class="max-w-2xl mx-auto text-slate-500 mt-3 text-sm md:text-base animate-fade-in-up" style="animation-delay: 0.2s;">
             Three simple steps to crown the champion brewery.
           </p>
@@ -129,7 +129,7 @@
           <span class="inline-flex items-center gap-2 text-amber-600 font-extrabold uppercase tracking-[3px] text-base animate-fade-in-up">
             Event Navigation
           </span>
-          <h2 class="mt-3 text-3xl font-bold text-gray-900 animate-fade-in-up" style="animation-delay: 0.1s;">Explore The Event</h2>
+          <h2 class="text-3xl font-bold text-gray-900 animate-fade-in-up" style="animation-delay: 0.1s;">Explore The Event</h2>
           <p class="max-w-2xl mx-auto text-slate-500 mt-3 text-sm md:text-base animate-fade-in-up" style="animation-delay: 0.2s;">
             Discover breweries, awards, schedules, sponsors and everything you need to enjoy Cambodia's premier craft beer celebration.
           </p>
