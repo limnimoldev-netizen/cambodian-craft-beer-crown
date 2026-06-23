@@ -39,11 +39,12 @@
           </div>
 
           <div class="flex flex-wrap gap-4">
-              <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLScEjueBWitDWygOZkaHDnkADWIHhYdgZ-lH_u3EvKM2RzL1AA/viewform" 
-                target="_blank" 
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScEjueBWitDWygOZkaHDnkADWIHhYdgZ-lH_u3EvKM2RzL1AA/viewform"
+                target="_blank"
                 rel="noopener noreferrer"
-                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow-lg shadow-amber-500/20 active:scale-[0.98] transition-all duration-200">
+                class="inline-flex items-center bg-[#EE9F27] hover:bg-[#b57305] text-white px-8 py-3 rounded-full font-bold transition-all shadow-md text-lg tracking-wide gap-3"
+              >
                 <i class="fa-solid fa-check-to-slot"></i>
                 <span>Judge Here</span>
               </a>
@@ -53,8 +54,8 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 mt-16">
-      <div class="text-center mb-14">
+    <section class="max-w-7xl mx-auto px-6 ">
+      <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl font-black text-slate-900">How Judging Works</h2>
         <p class="text-slate-500 mt-2 text-sm md:text-base">Three simple steps to crown the champion brewery.</p>
       </div>
@@ -109,12 +110,12 @@
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 mt-24 pb-24">
-      <div class="text-center mb-14">
+    <section class="max-w-7xl mx-auto px-6 mt-17 pb-24">
+      <div class="text-center mb-10">
         <span class="inline-flex items-center gap-2 text-amber-600 font-extrabold uppercase tracking-[3px] text-base">
           Event Navigation
         </span>
-        <h2 class="text-3xl md:text-4xl font-black mt-3 text-slate-900">Explore The Event</h2>
+        <h2 class="text-3xl md:text-4xl font-black  text-slate-900">Explore The Event</h2>
         <p class="max-w-2xl mx-auto text-slate-500 mt-3 text-sm md:text-base">
           Discover breweries, awards, schedules, sponsors and everything you need to enjoy Cambodia's premier craft beer celebration.
         </p>

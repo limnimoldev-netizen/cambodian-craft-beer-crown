@@ -1,9 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { Beer, Calendar, Trophy, Menu, X } from 'lucide-vue-next'
+import { Beer, Calendar, Trophy, Award, Handshake, House, Menu, X } from 'lucide-vue-next'
 
-// Control mobile drawer visibility
 const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
@@ -23,7 +22,7 @@ const toggleMenu = () => {
 
         <nav class="hidden md:flex items-center gap-8 font-medium text-base">
           <RouterLink to="/" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
-            <i class="fa-solid fa-house"></i> Home
+            <House class="w-5 h-5 text-center" /> Home
           </RouterLink>
 
           <RouterLink to="/breweries" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
@@ -35,15 +34,15 @@ const toggleMenu = () => {
           </RouterLink>
 
           <RouterLink to="/styles" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
-            <i class="fa-solid fa-award"></i> Styles
+            <Award class="w-5 h-5 text-center" /> Styles
           </RouterLink>
 
           <RouterLink to="/awards" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
-            <i class="fa-solid fa-trophy"></i> Awards
+           <Trophy class="w-5 h-5 text-center" /> Awards
           </RouterLink>
 
           <RouterLink to="/sponsors" class="flex items-center gap-1.5 text-[#333333] hover:text-[#f0a22a] pb-1 transition-colors" active-class="border-b-2 border-[#f0a22a] text-black font-semibold">
-            <i class="fa-solid  fa-handshake"></i> Sponsors
+            <Handshake class="w-5 h-5 text-center" /> Sponsors
           </RouterLink>                                                 
         </nav>
 
@@ -69,37 +68,75 @@ const toggleMenu = () => {
 
     <div v-if="isMenuOpen" class="md:hidden border-t border-gray-100 bg-white shadow-xl transition-all duration-300 ease-in-out">
       <div class="px-6 py-6 flex flex-col gap-5 font-medium text-lg">
-        <RouterLink @click="isMenuOpen = false" to="/" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
-          <i class="fa-solid fa-house w-5 text-center"></i> Home
+
+        <RouterLink
+          @click="isMenuOpen = false"
+          to="/"
+          class="flex items-center gap-3 text-gray-800 py-1"
+          active-class="text-[#f0a22a] font-bold"
+        >
+          <House class="w-5 h-5" />
+          Home
         </RouterLink>
 
-        <RouterLink @click="isMenuOpen = false" to="/breweries" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
-          <Beer class="w-5 h-5 text-center" /> Breweries
+        <RouterLink
+          @click="isMenuOpen = false"
+          to="/breweries"
+          class="flex items-center gap-3 text-gray-800 py-1"
+          active-class="text-[#f0a22a] font-bold"
+        >
+          <Beer class="w-5 h-5" />
+          Breweries
         </RouterLink>
 
-        <RouterLink @click="isMenuOpen = false" to="/schedule" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
-          <Calendar class="w-5 h-5 text-center" /> Schedule
+        <RouterLink
+          @click="isMenuOpen = false"
+          to="/schedule"
+          class="flex items-center gap-3 text-gray-800 py-1"
+          active-class="text-[#f0a22a] font-bold"
+        >
+          <Calendar class="w-5 h-5" />
+          Schedule
         </RouterLink>
 
-        <RouterLink @click="isMenuOpen = false" to="/styles" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
-          <i class="fa-solid fa-award w-5 text-center"></i> Styles
+        <RouterLink
+          @click="isMenuOpen = false"
+          to="/styles"
+          class="flex items-center gap-3 text-gray-800 py-1"
+          active-class="text-[#f0a22a] font-bold"
+        >
+          <Award class="w-5 h-5" />
+          Styles
         </RouterLink>
 
-        <RouterLink @click="isMenuOpen = false" to="/awards" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
-          <Trophy class="w-5 h-5 text-center" /> Awards
+        <RouterLink
+          @click="isMenuOpen = false"
+          to="/awards"
+          class="flex items-center gap-3 text-gray-800 py-1"
+          active-class="text-[#f0a22a] font-bold"
+        >
+          <Trophy class="w-5 h-5" />
+          Awards
         </RouterLink>
 
-        <RouterLink @click="isMenuOpen = false" to="/sponsors" class="flex items-center gap-3 text-gray-800 py-1" active-class="text-[#f0a22a] font-bold">
-          <i class="fa-solid fa-handshake w-5 text-center"></i> Sponsors
+        <RouterLink
+          @click="isMenuOpen = false"
+          to="/sponsors"
+          class="flex items-center gap-3 text-gray-800 py-1"
+          active-class="text-[#f0a22a] font-bold"
+        >
+          <Handshake class="w-5 h-5" />
+          Sponsors
         </RouterLink>
 
         <hr class="border-gray-100 my-1" />
 
-        <a 
-          href="https://docs.google.com/forms/d/e/1FAIpQLScEjueBWitDWygOZkaHDnkADWIHhYdgZ-lH_u3EvKM2RzL1AA/viewform" 
-          target="_blank" 
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScEjueBWitDWygOZkaHDnkADWIHhYdgZ-lH_u3EvKM2RzL1AA/viewform"
+          target="_blank"
           rel="noopener noreferrer"
-          class="w-full justify-center inline-flex items-center bg-[#d48806] hover:bg-[#b57305] text-white px-6 py-3 rounded-xl font-bold transition-all text-center gap-2">
+          class="w-full justify-center inline-flex items-center bg-[#d48806] hover:bg-[#b57305] text-white px-6 py-3 rounded-xl font-bold transition-all text-center gap-2"
+        >
           <i class="fa-solid fa-check-to-slot"></i>
           <span>Judge Here</span>
         </a>
