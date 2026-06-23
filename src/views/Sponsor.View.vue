@@ -1,8 +1,8 @@
 <template>
-  <section class=" px-4 py-8 min-h-screen bg-[#FAF9F5]">
-    <div class="mx-auto max-w-6xl ">
-      <!-- Header -->
-      <div class="text-center">
+  <section class="px-4 py-8 min-h-screen bg-[#FAF9F5]">
+    <div class="mx-auto max-w-6xl">
+      <!-- Header with Animation -->
+      <div class="text-center animate-fade-in-down">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-600">
           OUR SPONSORS
         </p>
@@ -12,13 +12,13 @@
         <p class="mx-auto mt-2 max-w-2xl text-sm text-gray-500 leading-relaxed">
           We thank our generous sponsors who make the Cambodian Craft Beer Crown 2025 possible. And we are proud to partner with these incredible organizations who share our passion for craft beer excellence.
         </p>
-        <div class="w-40 h-[2px] bg-[#EE9F27] mx-auto mt-3"></div>
+        <div class="w-40 h-[2px] bg-[#EE9F27] mx-auto mt-3 animate-scale-x"></div>
       </div>
 
       <!-- Platinum Sponsors -->
-      <div v-if="getSponsorsByTier('Platinum').length" class="mt-9">
+      <div v-if="getSponsorsByTier('Platinum').length" class="mt-9 animate-fade-in-up" style="animation-delay: 0.1s;">
         <div class="text-center mb-7">
-          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#E5E4E2] to-[#A9A9A9] text-gray-700 text-xs font-semibold uppercase tracking-widest rounded-full">
+          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#E5E4E2] to-[#A9A9A9] text-gray-700 text-xs font-semibold uppercase tracking-widest rounded-full animate-pulse-soft">
             Platinum Sponsors
           </span>
         </div>
@@ -27,25 +27,26 @@
           :class="getGridClass(getSponsorsByTier('Platinum').length, 'platinum')"
         >
           <div
-            v-for="sponsor in getSponsorsByTier('Platinum')"
+            v-for="(sponsor, index) in getSponsorsByTier('Platinum')"
             :key="sponsor.name"
-            class="group rounded-2xl border-2 border-[#C0C0C0] bg-white p-8 text-center shadow-md transition hover:shadow-xl hover:bg-gray-50 w-full max-w-sm"
+            class="group rounded-2xl border-2 border-[#C0C0C0] bg-white p-8 text-center shadow-md transition hover:shadow-xl hover:bg-gray-50 w-full max-w-sm animate-fade-in-up"
+            :style="{ animationDelay: (0.15 * (index + 1)) + 's' }"
           >
             <div class="mb-4 flex justify-center">
               <img 
                 v-if="sponsor.logo" 
                 :src="getImageUrl(sponsor.logo)" 
                 :alt="sponsor.name"
-                class="h-36 w-36 object-contain border-2 border-[#C0C0C0] p-3 transition group-hover:border-amber-400"
+                class="h-36 w-36 object-contain border-2 border-[#C0C0C0] p-3 transition group-hover:border-amber-400 duration-300"
               />
               <div 
                 v-else
-                class="flex h-36 w-36 items-center justify-center border-2 border-[#C0C0C0] bg-gray-50 text-4xl font-bold text-[#8C8C8C] transition group-hover:border-amber-400 group-hover:bg-gray-100"
+                class="flex h-36 w-36 items-center justify-center border-2 border-[#C0C0C0] bg-gray-50 text-4xl font-bold text-[#8C8C8C] transition group-hover:border-amber-400 group-hover:bg-gray-100 duration-300"
               >
                 {{ getInitials(sponsor.name) }}
               </div>
             </div>
-            <h3 class="text-xl font-bold text-[#EE9F27]">{{ sponsor.name }}</h3>
+            <h3 class="text-xl font-bold text-[#EE9F27] transition duration-300">{{ sponsor.name }}</h3>
             <p class="mt-2 text-sm text-gray-500 leading-relaxed">
               {{ sponsor.role }}
             </p>
@@ -54,9 +55,9 @@
       </div>
 
       <!-- Gold Sponsors -->
-      <div v-if="getSponsorsByTier('Gold').length" class="mt-9">
+      <div v-if="getSponsorsByTier('Gold').length" class="mt-9 animate-fade-in-up" style="animation-delay: 0.2s;">
         <div class="text-center mb-8">
-          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#FFD700] to-[#D4A017] text-white text-xs font-semibold uppercase tracking-widest rounded-full">
+          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#FFD700] to-[#D4A017] text-white text-xs font-semibold uppercase tracking-widest rounded-full animate-pulse-soft">
             Gold Sponsors
           </span>
         </div>
@@ -65,25 +66,26 @@
           :class="getGridClass(getSponsorsByTier('Gold').length, 'gold')"
         >
           <div
-            v-for="sponsor in getSponsorsByTier('Gold')"
+            v-for="(sponsor, index) in getSponsorsByTier('Gold')"
             :key="sponsor.name"
-            class="group rounded-2xl border-2 border-[#FFD700] bg-white p-6 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs"
+            class="group rounded-2xl border-2 border-[#FFD700] bg-white p-6 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs animate-fade-in-up"
+            :style="{ animationDelay: (0.15 * (index + 1)) + 's' }"
           >
             <div class="mb-4 flex justify-center">
               <img 
                 v-if="sponsor.logo" 
                 :src="getImageUrl(sponsor.logo)" 
                 :alt="sponsor.name"
-                class="h-30 w-30 object-contain border-2 border-[#FFD700] p-2 transition group-hover:border-amber-400"
+                class="h-30 w-30 object-contain border-2 border-[#FFD700] p-2 transition group-hover:border-amber-400 duration-300"
               />
               <div 
                 v-else
-                class="flex h-30 w-30 items-center justify-center border-2 border-[#FFD700] bg-amber-50 text-4xl font-bold text-[#D4A017] transition group-hover:border-amber-400 group-hover:bg-amber-100"
+                class="flex h-30 w-30 items-center justify-center border-2 border-[#FFD700] bg-amber-50 text-4xl font-bold text-[#D4A017] transition group-hover:border-amber-400 group-hover:bg-amber-100 duration-300"
               >
                 {{ getInitials(sponsor.name) }}
               </div>
             </div>
-            <h3 class="text-lg font-semibold text-[#EE9F27]">{{ sponsor.name }}</h3>
+            <h3 class="text-lg font-semibold text-[#EE9F27] transition duration-300">{{ sponsor.name }}</h3>
             <p class="mt-2 text-sm text-gray-500 leading-relaxed">
               {{ sponsor.role }}
             </p>
@@ -92,9 +94,9 @@
       </div>
 
       <!-- Silver Sponsors -->
-      <div v-if="getSponsorsByTier('Silver').length" class="mt-9">
+      <div v-if="getSponsorsByTier('Silver').length" class="mt-9 animate-fade-in-up" style="animation-delay: 0.3s;">
         <div class="text-center mb-8">
-          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#E8E8E8] to-[#A0A0A0] text-gray-700 text-xs font-semibold uppercase tracking-widest rounded-full">
+          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#E8E8E8] to-[#A0A0A0] text-gray-700 text-xs font-semibold uppercase tracking-widest rounded-full animate-pulse-soft">
             Silver Sponsors
           </span>
         </div>
@@ -103,25 +105,26 @@
           :class="getGridClass(getSponsorsByTier('Silver').length, 'silver')"
         >
           <div
-            v-for="sponsor in getSponsorsByTier('Silver')"
+            v-for="(sponsor, index) in getSponsorsByTier('Silver')"
             :key="sponsor.name"
-            class="group rounded-2xl border-2 border-[#C0C0C0] bg-white p-6 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs"
+            class="group rounded-2xl border-2 border-[#C0C0C0] bg-white p-6 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs animate-fade-in-up"
+            :style="{ animationDelay: (0.15 * (index + 1)) + 's' }"
           >
             <div class="mb-4 flex justify-center">
               <img 
                 v-if="sponsor.logo" 
                 :src="getImageUrl(sponsor.logo)" 
                 :alt="sponsor.name"
-                class="h-25 w-25 object-contain border-2 border-[#C0C0C0] p-2 transition group-hover:border-amber-400"
+                class="h-25 w-25 object-contain border-2 border-[#C0C0C0] p-2 transition group-hover:border-amber-400 duration-300"
               />
               <div 
                 v-else
-                class="flex h-25 w-25 items-center justify-center border-2 border-[#C0C0C0] bg-gray-50 text-4xl font-bold text-[#8C8C8C] transition group-hover:border-amber-400 group-hover:bg-gray-100"
+                class="flex h-25 w-25 items-center justify-center border-2 border-[#C0C0C0] bg-gray-50 text-4xl font-bold text-[#8C8C8C] transition group-hover:border-amber-400 group-hover:bg-gray-100 duration-300"
               >
                 {{ getInitials(sponsor.name) }}
               </div>
             </div>
-            <h3 class="text-base font-semibold text-[#EE9F27]">{{ sponsor.name }}</h3>
+            <h3 class="text-base font-semibold text-[#EE9F27] transition duration-300">{{ sponsor.name }}</h3>
             <p class="mt-2 text-sm text-gray-500 leading-relaxed">
               {{ sponsor.role }}
             </p>
@@ -130,9 +133,9 @@
       </div>
 
       <!-- Bronze Sponsors -->
-      <div v-if="getSponsorsByTier('Bronze').length" class="mt-9">
+      <div v-if="getSponsorsByTier('Bronze').length" class="mt-9 animate-fade-in-up" style="animation-delay: 0.4s;">
         <div class="text-center mb-8">
-          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#CD7F32] to-[#A97142] text-white text-xs font-semibold uppercase tracking-widest rounded-full">
+          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-[#CD7F32] to-[#A97142] text-white text-xs font-semibold uppercase tracking-widest rounded-full animate-pulse-soft">
             Bronze Sponsors
           </span>
         </div>
@@ -141,25 +144,26 @@
           :class="getGridClass(getSponsorsByTier('Bronze').length, 'bronze')"
         >
           <div
-            v-for="sponsor in getSponsorsByTier('Bronze')"
+            v-for="(sponsor, index) in getSponsorsByTier('Bronze')"
             :key="sponsor.name"
-            class="group rounded-2xl border-2 border-[#CD7F32] bg-white p-5 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs"
+            class="group rounded-2xl border-2 border-[#CD7F32] bg-white p-5 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs animate-fade-in-up"
+            :style="{ animationDelay: (0.15 * (index + 1)) + 's' }"
           >
             <div class="mb-4 flex justify-center">
               <img 
                 v-if="sponsor.logo" 
                 :src="getImageUrl(sponsor.logo)" 
                 :alt="sponsor.name"
-                class="h-20 w-20 object-contain border-2 border-[#CD7F32] p-2 transition group-hover:border-amber-400"
+                class="h-20 w-20 object-contain border-2 border-[#CD7F32] p-2 transition group-hover:border-amber-400 duration-300"
               />
               <div 
                 v-else
-                class="flex h-20 w-20 items-center justify-center border-2 border-[#CD7F32] bg-amber-50 text-4xl font-bold text-[#CD7F32] transition group-hover:border-amber-400 group-hover:bg-amber-100"
+                class="flex h-20 w-20 items-center justify-center border-2 border-[#CD7F32] bg-amber-50 text-4xl font-bold text-[#CD7F32] transition group-hover:border-amber-400 group-hover:bg-amber-100 duration-300"
               >
                 {{ getInitials(sponsor.name) }}
               </div>
             </div>
-            <h3 class="text-sm font-semibold text-[#EE9F27]">{{ sponsor.name }}</h3>
+            <h3 class="text-sm font-semibold text-[#EE9F27] transition duration-300">{{ sponsor.name }}</h3>
             <p class="mt-1 text-xs text-gray-500 leading-relaxed">
               {{ sponsor.role }}
             </p>
@@ -168,9 +172,9 @@
       </div>
 
       <!-- Partners -->
-      <div v-if="getSponsorsByTier('Partner').length" class="mt-9">
+      <div v-if="getSponsorsByTier('Partner').length" class="mt-9 animate-fade-in-up" style="animation-delay: 0.5s;">
         <div class="text-center mb-8">
-          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 text-xs font-semibold uppercase tracking-widest rounded-full">
+          <span class="inline-block px-6 py-1.5 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 text-xs font-semibold uppercase tracking-widest rounded-full animate-pulse-soft">
             Partners
           </span>
         </div>
@@ -179,38 +183,32 @@
           :class="getGridClass(getSponsorsByTier('Partner').length, 'partner')"
         >
           <div
-            v-for="sponsor in getSponsorsByTier('Partner')"
+            v-for="(sponsor, index) in getSponsorsByTier('Partner')"
             :key="sponsor.name"
-            class="group rounded-xl border-2 border-gray-300 bg-white p-4 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs"
+            class="group rounded-xl border-2 border-gray-300 bg-white p-4 text-center shadow-sm transition hover:shadow-md hover:bg-gray-50 w-full max-w-xs animate-fade-in-up"
+            :style="{ animationDelay: (0.1 * (index + 1)) + 's' }"
           >
             <div class="mb-3 flex justify-center">
               <img 
                 v-if="sponsor.logo" 
                 :src="getImageUrl(sponsor.logo)" 
                 :alt="sponsor.name"
-                class="h-16 w-16 object-contain border-2 border-gray-300 p-1.5 transition group-hover:border-amber-400"
+                class="h-16 w-16 object-contain border-2 border-gray-300 p-1.5 transition group-hover:border-amber-400 duration-300"
               />
               <div 
                 v-else
-                class="flex h-16 w-16 items-center justify-center border-2 border-gray-300 bg-amber-50 text-4xl font-bold text-amber-700 transition group-hover:border-amber-400 group-hover:bg-amber-100"
+                class="flex h-16 w-16 items-center justify-center border-2 border-gray-300 bg-amber-50 text-4xl font-bold text-amber-700 transition group-hover:border-amber-400 group-hover:bg-amber-100 duration-300"
               >
                 {{ getInitials(sponsor.name) }}
               </div>
             </div>
-            <h3 class="text-sm font-semibold text-[#EE9F27]">{{ sponsor.name }}</h3>
+            <h3 class="text-sm font-semibold text-[#EE9F27] transition duration-300">{{ sponsor.name }}</h3>
             <p class="mt-1 text-xs text-gray-500 leading-relaxed">
               {{ sponsor.role }}
             </p>
           </div>
         </div>
       </div>
-
-      <!-- Bottom Decoration -->
-      <!-- <div class="mt-16 flex items-center justify-center gap-4 text-xs text-gray-400">
-        <span class="h-px w-12 bg-gray-300"></span>
-        <span class="tracking-wide">Supporting Craft Beer in Cambodia</span>
-        <span class="h-px w-12 bg-gray-300"></span>
-      </div> -->
     </div>
   </section>
 </template>
@@ -396,5 +394,64 @@ const getInitials = (name) => {
 }
 .w-35 {
   width: 140px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-scale-x {
+  animation: scaleX 0.6s ease-out forwards;
+  transform-origin: center;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
 }
 </style>

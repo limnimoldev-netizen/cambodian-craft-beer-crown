@@ -1,83 +1,94 @@
 <template>
-   <section class=" px-4  min-h-screen bg-[#FAF9F5]">
-  <div class="mx-auto max-w-5xl ">
-  <div class="min-h-screen bg-gray-50 px-4 sm:px-8 lg:px-24 py-9">
+  <section class="px-4 min-h-screen bg-[#FAF9F5]">
+    <div class="mx-auto max-w-5xl">
+      <div class="min-h-screen bg-gray-50 px-4 sm:px-8 lg:px-24 py-9">
 
-    <!-- Filter Buttons -->
-    <div class="flex flex-wrap gap-2 mb-6">
-      <button
-        v-for="filter in filters"
-        :key="filter"
-        @click="activeFilter = filter"
-        :class="[
-          'px-4 py-1.5 rounded-full font-semibold text-white text-sm transition',
-          activeFilter === filter ? 'bg-amber-500' : 'bg-amber-400 hover:bg-amber-500'
-        ]"
-      >
-        {{ filter }}
-      </button>
-    </div>
-
-    <!-- Beer Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div
-        v-for="beer in filteredBeers"
-        :key="beer.id"
-        class="bg-white rounded-2xl shadow-md p-4"
-      >
-        <!-- Beer Name + Country Badge -->
-        <div class="flex items-start justify-between gap-2 mb-4">
-          <h2 class="text-base font-bold text-gray-900 leading-snug">{{ beer.name }}</h2>
-          <span class="bg-amber-400 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0">
-            {{ beer.country }}
-          </span>
-        </div>
-
-        <!-- Stats -->
-        <div class="flex gap-3 mb-4">
-          <div class="flex-1 bg-gray-100 rounded-xl p-2.5 text-center">
-            <p class="text-xs text-gray-500">{{ beer.abvLabel }}</p>
-            <p class="text-sm font-semibold text-gray-800 mt-1">{{ beer.abv }}</p>
-          </div>
-          <div class="flex-1 bg-gray-100 rounded-xl p-2.5 text-center">
-            <p class="text-xs text-gray-500">{{ beer.ibuLabel }}</p>
-            <p class="text-sm font-semibold text-gray-800 mt-1">{{ beer.ibu }}</p>
-          </div>
-        </div>
-
-        <!-- Bitterness Bar -->
-        <div class="mb-4">
-          <p class="text-xs text-gray-600 mb-1">Bitterness Level</p>
-          <div class="w-full bg-gray-200 rounded-full h-2">
-            <div
-              class="bg-amber-400 h-2 rounded-full transition-all duration-500"
-              :style="{ width: beer.bitterness + '%' }"
-            ></div>
-          </div>
-        </div>
-
-        <!-- Tap for Description -->
-        <div>
-          <button
-            @click="beer.expanded = !beer.expanded"
-            class="flex items-center gap-1 text-xs text-gray-500 hover:text-amber-500 transition w-full justify-end"
-          >
-            <span>{{ beer.expanded ? '▲' : '▼' }}</span>
-            <span>tap for description</span>
-          </button>
-
-          <!-- Description -->
-          <p v-if="beer.expanded" class="text-xs text-gray-600 mt-2 leading-relaxed">
-            {{ beer.description }}
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl animate-fade-in-up">
+            Beer <span class="text-[#EE9F27]">Styles</span>
+          </h1>
+          <p class="text-sm text-slate-500 mt-1 animate-fade-in-up" style="animation-delay: 0.1s;">
+            Explore the different beer styles in the competition
           </p>
+          <div class="w-40 h-[2px] bg-[#EE9F27] mx-auto mt-3 animate-scale-x" style="animation-delay: 0.2s;"></div>
         </div>
 
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2 mb-6 animate-fade-in-up" style="animation-delay: 0.3s;">
+          <button
+            v-for="filter in filters"
+            :key="filter"
+            @click="activeFilter = filter"
+            :class="[
+              'px-4 py-1.5 rounded-full font-semibold text-white text-sm transition',
+              activeFilter === filter ? 'bg-amber-500' : 'bg-amber-400 hover:bg-amber-500'
+            ]"
+          >
+            {{ filter }}
+          </button>
+        </div>
+
+        <!-- Beer Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            v-for="(beer, index) in filteredBeers"
+            :key="beer.id"
+            class="bg-white rounded-2xl shadow-md p-4 animate-fade-in-up"
+            :style="{ animationDelay: (0.1 * (index + 1)) + 's' }"
+          >
+            <!-- Beer Name + Country Badge -->
+            <div class="flex items-start justify-between gap-2 mb-4">
+              <h2 class="text-base font-bold text-gray-900 leading-snug">{{ beer.name }}</h2>
+              <span class="bg-amber-400 text-white text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0">
+                {{ beer.country }}
+              </span>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex gap-3 mb-4">
+              <div class="flex-1 bg-gray-100 rounded-xl p-2.5 text-center">
+                <p class="text-xs text-gray-500">{{ beer.abvLabel }}</p>
+                <p class="text-sm font-semibold text-gray-800 mt-1">{{ beer.abv }}</p>
+              </div>
+              <div class="flex-1 bg-gray-100 rounded-xl p-2.5 text-center">
+                <p class="text-xs text-gray-500">{{ beer.ibuLabel }}</p>
+                <p class="text-sm font-semibold text-gray-800 mt-1">{{ beer.ibu }}</p>
+              </div>
+            </div>
+
+            <!-- Bitterness Bar -->
+            <div class="mb-4">
+              <p class="text-xs text-gray-600 mb-1">Bitterness Level</p>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div
+                  class="bg-amber-400 h-2 rounded-full transition-all duration-500"
+                  :style="{ width: beer.bitterness + '%' }"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Tap for Description -->
+            <div>
+              <button
+                @click="beer.expanded = !beer.expanded"
+                class="flex items-center gap-1 text-xs text-gray-500 hover:text-amber-500 transition w-full justify-end"
+              >
+                <span>{{ beer.expanded ? '▲' : '▼' }}</span>
+                <span>tap for description</span>
+              </button>
+
+              <!-- Description -->
+              <p v-if="beer.expanded" class="text-xs text-gray-600 mt-2 leading-relaxed">
+                {{ beer.description }}
+              </p>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
   </section>
-
 </template>
 
 <script setup>
@@ -90,7 +101,7 @@ const filters = ['All', 'Germany', 'Belguim', 'England']
 const beers = ref([
   {
     id: 1,
-    name: 'Strong Bitter (ESB',
+    name: 'Strong Bitter (ESB)',
     country: 'England',
     abvLabel: 'Alcohol',
     abv: '4.6%-6.2%',
@@ -191,3 +202,36 @@ const filteredBeers = computed(() => {
   return beers.value.filter(b => b.country === activeFilter.value)
 })
 </script>
+
+<style scoped>
+/* Simple Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-scale-x {
+  animation: scaleX 0.6s ease-out forwards;
+  transform-origin: center;
+}
+</style>

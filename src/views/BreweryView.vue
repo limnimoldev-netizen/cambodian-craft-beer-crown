@@ -1,32 +1,36 @@
 <template>
-  <section class=" px-4 py-9 min-h-screen bg-[#FAF9F5]">
-    <div class="mx-auto max-w-5xl ">
+  <section class="px-4 py-9 min-h-screen bg-[#FAF9F5]">
+    <div class="mx-auto max-w-5xl">
+      
+      <!-- Header with Animation -->
       <div class="text-center">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 animate-fade-in-up">
           CAMBODIAN <span class="text-[#EE9F27]">BREWERIES</span>
         </p>
-        <h1 class="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+        <h1 class="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl animate-fade-in-up" style="animation-delay: 0.1s;">
           Breweries at the Cambodian Craft Beer Crown 2025
         </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-sm text-gray-500 leading-relaxed">
+        <p class="mx-auto mt-4 max-w-2xl text-sm text-gray-500 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
           These craft breweries are bringing their finest European-style beers to the competition.
           Visit each one, taste their entry, and decide your champion.
         </p>
-        <div class="w-40 h-[2px] bg-[#EE9F27] mx-auto mt-4"></div>
+        <div class="w-40 h-[2px] bg-[#EE9F27] mx-auto mt-4 animate-scale-x" style="animation-delay: 0.3s;"></div>
       </div>
 
+      <!-- Brewery Grid -->
       <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <div
-          v-for="brewery in breweries"
+          v-for="(brewery, index) in breweries"
           :key="brewery.name"
-          class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm transition hover:shadow-md brew-card"
+          class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm transition hover:shadow-md brew-card animate-fade-in-up"
+          :style="{ animationDelay: (0.1 * (index + 1)) + 's' }"
         >
           <div class="mb-4 flex justify-center">
             <img 
               v-if="brewery.logo" 
               :src="getImageUrl(brewery.logo)" 
               :alt="brewery.name + ' logo'"
-              class="h-30 w-30 object-contain rounded-full border border-gray-200 p-2"
+              class="h-30 w-30 object-contain rounded-full border border-gray-200 p-2 transition group-hover:border-amber-400 duration-300"
             />
             <div v-else class="h-30 w-30 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-2xl">
               {{ brewery.name.charAt(0) }}
@@ -119,9 +123,9 @@ const breweries = [
   },
   {
     name: 'Himawari Microbrewery',
-    description: 'Himawari Microbrewery is the 1st and only microbrewery launched by it’s 5-star hotel-apartments in Cambodia.',
+    description: 'Himawari Microbrewery is the 1st and only microbrewery launched by it\'s 5-star hotel-apartments in Cambodia.',
     facebook: 'https://www.facebook.com/HimawariHotelMicrobrewery',
-    logo: 'Himawari Microbrewery.png' // Put back original name style
+    logo: 'Himawari Microbrewery.png'
   },
   {
     name: 'Chug Lab',
@@ -131,9 +135,9 @@ const breweries = [
   },
   {
     name: 'Bash Brewing',
-    description: 'is one of the Kingdom’s original craft breweries, creating some of the finest all-natural craft beer in Cambodia.',
+    description: 'is one of the Kingdom\'s original craft breweries, creating some of the finest all-natural craft beer in Cambodia.',
     facebook: 'https://www.facebook.com/bashbrewingkh',
-    logo: 'Bash Brewing.png' // Put back original name style
+    logo: 'Bash Brewing.png'
   }
 ]
 
@@ -157,5 +161,45 @@ const getImageUrl = (filename) => {
 .brew-card:hover {
   background-color: #faf9f6;
   transform: translateY(-2px);
+}
+
+/* Simple Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-scale-x {
+  animation: scaleX 0.6s ease-out forwards;
+  transform-origin: center;
+}
+
+/* Hover effect for logo border */
+.brew-card img {
+  transition: border-color 0.3s ease;
+}
+
+.brew-card:hover img {
+  border-color: #EE9F27;
 }
 </style>
