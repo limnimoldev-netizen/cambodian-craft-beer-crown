@@ -1,10 +1,9 @@
 <template>
-  <section class="relative px-4 min-h-screen bg-[#FAF9F5]">
+  <section class="relative px-4 min-h-screen bg-[#FAF9F5]  md:py-16">
     <div class="mx-auto max-w-5xl">
 
-      <!-- Hero Section -->
-      <section class="relative min-h-[700px] md:min-h-[850px] flex items-center justify-center px-5">
-        <div class="relative z-10 w-full max-w-7xl bg-white rounded-[32px] border border-slate-200 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.04)] p-8 md:p-16 lg:p-20">
+      <section class="relative flex items-center justify-center px-5 mb-12 md:mb-16">
+        <div class="relative z-10 w-full max-w-7xl bg-white rounded-[32px] border border-slate-200 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.04)] p-8 md:p-14 lg:p-16">
           <div class="max-w-2xl">
             
             <span class="inline-flex items-center px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-amber-700 font-bold text-xs md:text-sm tracking-wide uppercase mb-6 animate-fade-in-up">
@@ -16,37 +15,37 @@
               <span class="text-[#EE9F27] block mt-1 animate-fade-in-up" style="animation-delay: 0.2s;">Crown 2026</span>
             </h1>
 
-            <p class="text-base md:text-lg text-slate-600 font-medium leading-relaxed mb-10 max-w-xl animate-fade-in-up" style="animation-delay: 0.3s;">
+            <p class="text-base md:text-lg text-slate-600 font-medium leading-relaxed mb-8 max-w-xl animate-fade-in-up" style="animation-delay: 0.3s;">
               The Cambodian Craft Beer Crown 2026 brings together the country's
               most innovative breweries for a celebration of craftsmanship,
               creativity and community.
             </p>
 
-              <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 md:p-8 mb-8 animate-fade-in-up" style="animation-delay: 0.4s;">
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-    <div class="flex flex-col gap-1">
-      <p class="text-amber-600  text-xl tracking-wider uppercase flex items-center gap-2">
-        <i class="fa-regular fa-calendar text-amber-500"></i>
-        Date
-      </p>
-      <p class="font-bold text-slate-800 text-sm md:text-base">August 16, 2026</p>
-    </div>
-    <div class="flex flex-col gap-1">
-      <p class="text-amber-600  text-xl tracking-wider uppercase flex items-center gap-2">
-        <i class="fa-regular fa-clock text-amber-500"></i>
-        Time
-      </p>
-      <p class="font-bold text-slate-800 text-sm md:text-base">2:00 PM - 11:30 PM</p>
-    </div>
-    <div class="flex flex-col gap-1">
-      <p class="text-amber-600  text-xl tracking-wider uppercase flex items-center gap-2">
-        <i class="fa-solid fa-location-dot text-amber-500"></i>
-        Venue
-      </p>
-      <p class="font-bold text-slate-800 text-sm md:text-base">Botanico Beer Garden</p>
-    </div>
-  </div>
-</div>
+            <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 md:p-8 mb-8 animate-fade-in-up" style="animation-delay: 0.4s;">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="flex flex-col gap-1">
+                  <p class="text-amber-600 text-xl tracking-wider uppercase flex items-center gap-2">
+                    <i class="fa-regular fa-calendar text-amber-500"></i>
+                    Date
+                  </p>
+                  <p class="font-bold text-slate-800 text-sm md:text-base">August 16, 2026</p>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <p class="text-amber-600 text-xl tracking-wider uppercase flex items-center gap-2">
+                    <i class="fa-regular fa-clock text-amber-500"></i>
+                    Time
+                  </p>
+                  <p class="font-bold text-slate-800 text-sm md:text-base">2:00 PM - 11:30 PM</p>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <p class="text-amber-600 text-xl tracking-wider uppercase flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-amber-500"></i>
+                    Venue
+                  </p>
+                  <p class="font-bold text-slate-800 text-sm md:text-base">Botanico Beer Garden</p>
+                </div>
+              </div>
+            </div>
 
             <div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.5s;">
               <a
@@ -64,10 +63,9 @@
         </div>
       </section>
 
-      <!-- How Judging Works -->
-      <section class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl md:text-4xl font-black text-slate-900 animate-fade-in-up">How Judging Works</h2>
+      <section class="max-w-7xl mx-auto px-2 mb-16">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-black text-[#0f172a] animate-fade-in-up">How Judging Works</h2>
           <p class="text-slate-500 mt-2 text-sm md:text-base animate-fade-in-up" style="animation-delay: 0.1s;">Three simple steps to crown the champion brewery.</p>
         </div>
 
@@ -106,8 +104,7 @@
         </div>
       </section>
 
-      <!-- About The Event -->
-      <section class="max-w-7xl mx-auto mt-10">
+      <section class="max-w-7xl mx-auto mb-16">
         <div class="bg-white rounded-[32px] p-8 md:p-14 border border-slate-50 shadow-sm animate-fade-in-up" style="animation-delay: 0.1s;">
           <div class="text-center max-w-3xl mx-auto">
             <span class="text-amber-600 font-extrabold uppercase tracking-widest text-base">About The Event</span>
@@ -122,8 +119,7 @@
         </div>
       </section>
 
-      <!-- Event Navigation -->
-      <section class="max-w-7xl mx-auto px-5 mt-10 pb-10">
+      <section class="max-w-7xl mx-auto px-5 pb-10">
         <div class="text-center mb-10">
           <span class="inline-flex items-center gap-2 text-amber-600 font-extrabold uppercase tracking-[3px] text-base animate-fade-in-up">
             Event Navigation
