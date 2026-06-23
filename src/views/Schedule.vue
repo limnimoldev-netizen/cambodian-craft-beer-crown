@@ -59,32 +59,32 @@ const schedules = [
   },
   {
     time: '3 : 15 PM',
-    title: 'Welcome Speech',
+    title: 'Introduction by the Mc',
     desc: 'Brief presentation about the brewery, brewing process, and today',
   },
   {
     time: '3 : 30 PM',
-    title: 'Door Open',
+    title: 'Dj Wha-wah (Until 6:30)',
     desc: 'Guest arrive , collect tasted product',
   },
    {
     time: '6 : 40 PM',
-    title: 'Door Open',
+    title: 'Blind Tasting live session',
     desc: 'Guest arrive , collect tasted product',
   },
    {
     time: '7 : 30 PM',
-    title: 'Door Open',
+    title: 'Start award ceremoby',
     desc: 'Guest arrive , collect tasted product',
   },
    {
     time: '8 : 30 PM',
-    title: 'Door Open',
+    title: 'Live music by the broken cymbol (untill 11:00om)',
     desc: 'Guest arrive , collect tasted product',
   },
   {
-    time: '8 : 30 PM',
-    title: 'Door Open',
+    time: '11 : 30 PM',
+    title: 'Events Ends',
     desc: 'Guest arrive , collect tasted product',
   },
 ]
